@@ -1,0 +1,31 @@
+\hypertarget{_aircraft_8hpp_source}{}\doxysection{Aircraft.\+hpp}
+\label{_aircraft_8hpp_source}\index{DirectX12Engine/DirectX12Engine/Aircraft.hpp@{DirectX12Engine/DirectX12Engine/Aircraft.hpp}}
+\mbox{\hyperlink{_aircraft_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_entity_8hpp}{Entity.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00004}\mbox{\hyperlink{class_aircraft}{00004}} \textcolor{keyword}{class }\mbox{\hyperlink{class_aircraft}{Aircraft}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_entity}{Entity}}}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00006}00006 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00008}\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{00008}}     \textcolor{keyword}{enum class} \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}}}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00009}00009     \{}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00010}00010         Eagle,}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00011}00011         Raptor,}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00012}00012     \};}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00014}00014 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00015}00015     \mbox{\hyperlink{class_aircraft_ae9d52b44a62c33bf411185829158fba4}{Aircraft}}(\mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}} type, \mbox{\hyperlink{class_game}{Game}}* \mbox{\hyperlink{class_scene_node_a06d1261ef839789469f228e7a7f2bfb9}{game}});}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00017}00017 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00018}00018     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}    \mbox{\hyperlink{class_aircraft_a21690c8600e97f085b96e3bb72444688}{drawCurrent}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00019}00019     \textcolor{comment}{//virtual void  buildCurrent();}}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00021}00021 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00022}\mbox{\hyperlink{class_aircraft_a5ffb63f0644f35794b69c7d434c0254f}{00022}}     \mbox{\hyperlink{class_aircraft_a7dae28542933e088032b753600046acd}{Type}}    \mbox{\hyperlink{class_aircraft_a5ffb63f0644f35794b69c7d434c0254f}{m\_Type}};}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00023}\mbox{\hyperlink{class_aircraft_a0e6502f87f9a37dc2049afbc42f50b15}{00023}}     std::string     \mbox{\hyperlink{class_aircraft_a0e6502f87f9a37dc2049afbc42f50b15}{m\_Sprite}};}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00024}\mbox{\hyperlink{class_aircraft_a91654d70505a6e67df7d14447ecb1752}{00024}}     \mbox{\hyperlink{struct_render_item}{RenderItem}}* \mbox{\hyperlink{class_aircraft_a91654d70505a6e67df7d14447ecb1752}{m\_AircraftRender}};}
+\DoxyCodeLine{\Hypertarget{_aircraft_8hpp_source_l00025}00025 \};}
+
+\end{DoxyCode}

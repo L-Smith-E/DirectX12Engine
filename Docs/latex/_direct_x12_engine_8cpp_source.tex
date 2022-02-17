@@ -1,0 +1,30 @@
+\hypertarget{_direct_x12_engine_8cpp_source}{}\doxysection{Direct\+X12\+Engine.\+cpp}
+\label{_direct_x12_engine_8cpp_source}\index{DirectX12Engine/DirectX12Engine/DirectX12Engine.cpp@{DirectX12Engine/DirectX12Engine/DirectX12Engine.cpp}}
+\mbox{\hyperlink{_direct_x12_engine_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_8hpp}{Game.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00003}\mbox{\hyperlink{_direct_x12_engine_8cpp_aabcda87589d774901aa87061b8fd0176}{00003}} \textcolor{keywordtype}{int} WINAPI \mbox{\hyperlink{_direct_x12_engine_8cpp_aabcda87589d774901aa87061b8fd0176}{WinMain}}(HINSTANCE hInstance, HINSTANCE prevInstance,}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00004}00004     PSTR cmdLine, \textcolor{keywordtype}{int} showCmd)}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00006}00006     \textcolor{comment}{// Enable run-\/time memory check for debug builds.}}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#if defined(DEBUG) | defined(\_DEBUG)}}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00008}00008     \_CrtSetDbgFlag(\_CRTDBG\_ALLOC\_MEM\_DF | \_CRTDBG\_LEAK\_CHECK\_DF);}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00011}00011     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00012}00012     \{}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00013}00013         \mbox{\hyperlink{class_game}{Game}} theApp(hInstance);}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00014}00014         \textcolor{keywordflow}{if} (!theApp.\mbox{\hyperlink{class_game_a16354d232327f6c21319713bf6983674}{Initialize}}())}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00015}00015             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00017}00017         \textcolor{keywordflow}{return} theApp.\mbox{\hyperlink{class_d3_d_app_a0a2ed8f09bb1ae3a97f3b9a5067c905f}{Run}}();}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00018}00018     \}}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00019}00019     \textcolor{keywordflow}{catch} (\mbox{\hyperlink{class_dx_exception}{DxException}}\& e)}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00020}00020     \{}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00021}00021         MessageBox(\textcolor{keyword}{nullptr}, e.\mbox{\hyperlink{class_dx_exception_a031a5ff549f043decbe96093e73dac27}{ToString}}().c\_str(), L\textcolor{stringliteral}{"{}HR Failed"{}}, MB\_OK);}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00022}00022         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00023}00023     \}}
+\DoxyCodeLine{\Hypertarget{_direct_x12_engine_8cpp_source_l00024}00024 \}}
+
+\end{DoxyCode}

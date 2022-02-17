@@ -1,0 +1,249 @@
+\hypertarget{class_world}{}\doxysection{World Class Reference}
+\label{class_world}\index{World@{World}}
+
+
+{\ttfamily \#include $<$World.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_world_a358fecc8d0e42996d7bd1884f126a97c}{World}} (\mbox{\hyperlink{class_game}{Game}} $\ast$game)
+\item 
+void \mbox{\hyperlink{class_world_a36c003f54e14e022a360551af5e7923e}{update}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt)
+\item 
+void \mbox{\hyperlink{class_world_ab51a17ccbb108616daacd0c34973dc8d}{draw}} ()
+\item 
+void \mbox{\hyperlink{class_world_ae7df49f5d488e5cd1254bf360966f410}{build\+Scene}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2f}{Layer}} \{ \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2fa978d5e24a046c655c1a7d684c19bdcf0}{Background}}
+, \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2fa130351e16065c2accbaba11e0441c03a}{Air}}
+, \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2fab85a44d6989a43dc11f11bacedb2bf94}{Layer\+Count}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game}{Game}} $\ast$ \mbox{\hyperlink{class_world_a625a8dbdd805000904fb376215ca4c0a}{m\+Game}}
+\item 
+\mbox{\hyperlink{class_scene_node}{Scene\+Node}} $\ast$ \mbox{\hyperlink{class_world_abf9d49d6f67de1caff82e111a4f29040}{m\+Scene\+Graph}}
+\item 
+XMFLOAT4 \mbox{\hyperlink{class_world_a3be772106be584dff01efa4a27fc13a7}{m\+World\+Bounds}}
+\item 
+XMFLOAT2 \mbox{\hyperlink{class_world_a8bde7886e9d66e6bda46921d97186f66}{m\+Spawn\+Position}}
+\item 
+float \mbox{\hyperlink{class_world_a1c2d240ef6483547a5c2e5ded0e3a150}{m\+Scroll\+Speed}}
+\item 
+\mbox{\hyperlink{class_aircraft}{Aircraft}} $\ast$ \mbox{\hyperlink{class_world_a5e511d7599995d30084959c91d98e13d}{m\+Player\+Aircraft}}
+\item 
+\mbox{\hyperlink{class_aircraft}{Aircraft}} $\ast$ \mbox{\hyperlink{class_world_a2921ba147a33d7ef773d3b4d68ab498c}{plane1}}
+\item 
+\mbox{\hyperlink{class_aircraft}{Aircraft}} $\ast$ \mbox{\hyperlink{class_world_a9dd0026a738666a0e988dc18300ade5a}{plane2}}
+\item 
+\mbox{\hyperlink{class_sprite_node}{Sprite\+Node}} $\ast$ \mbox{\hyperlink{class_world_a6f3b09177168e5a7b34fd9418a94136a}{m\+Background}}
+\item 
+\mbox{\hyperlink{class_aircraft}{Aircraft}} $\ast$ \mbox{\hyperlink{class_world_a9c75c7433b37fc02925d6425e1b7f8a9}{m\+Enemy}}
+\item 
+std\+::array$<$ \mbox{\hyperlink{class_scene_node}{Scene\+Node}} $\ast$, 2 $>$ \mbox{\hyperlink{class_world_a39fc72e56eb0aa3f35d6cbb96feff2fd}{m\+Scene\+Layers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_world_a7580b1f38bb9018be3eeef74462b4b2f}\label{class_world_a7580b1f38bb9018be3eeef74462b4b2f}} 
+\index{World@{World}!Layer@{Layer}}
+\index{Layer@{Layer}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Layer}{Layer}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_world_a7580b1f38bb9018be3eeef74462b4b2f}{World\+::\+Layer}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Background@{Background}!World@{World}}\index{World@{World}!Background@{Background}}}\mbox{\Hypertarget{class_world_a7580b1f38bb9018be3eeef74462b4b2fa978d5e24a046c655c1a7d684c19bdcf0}\label{class_world_a7580b1f38bb9018be3eeef74462b4b2fa978d5e24a046c655c1a7d684c19bdcf0}} 
+Background&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Air@{Air}!World@{World}}\index{World@{World}!Air@{Air}}}\mbox{\Hypertarget{class_world_a7580b1f38bb9018be3eeef74462b4b2fa130351e16065c2accbaba11e0441c03a}\label{class_world_a7580b1f38bb9018be3eeef74462b4b2fa130351e16065c2accbaba11e0441c03a}} 
+Air&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LayerCount@{LayerCount}!World@{World}}\index{World@{World}!LayerCount@{LayerCount}}}\mbox{\Hypertarget{class_world_a7580b1f38bb9018be3eeef74462b4b2fab85a44d6989a43dc11f11bacedb2bf94}\label{class_world_a7580b1f38bb9018be3eeef74462b4b2fab85a44d6989a43dc11f11bacedb2bf94}} 
+Layer\+Count&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_world_a358fecc8d0e42996d7bd1884f126a97c}\label{class_world_a358fecc8d0e42996d7bd1884f126a97c}} 
+\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\doxysubsubsection{\texorpdfstring{World()}{World()}}
+{\footnotesize\ttfamily World\+::\+World (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game}{Game}} $\ast$}]{game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_world_8cpp_source}{World.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_world_ae7df49f5d488e5cd1254bf360966f410}\label{class_world_ae7df49f5d488e5cd1254bf360966f410}} 
+\index{World@{World}!buildScene@{buildScene}}
+\index{buildScene@{buildScene}!World@{World}}
+\doxysubsubsection{\texorpdfstring{buildScene()}{buildScene()}}
+{\footnotesize\ttfamily void World\+::build\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_world_8cpp_source}{World.\+cpp}}.
+
+\mbox{\Hypertarget{class_world_ab51a17ccbb108616daacd0c34973dc8d}\label{class_world_ab51a17ccbb108616daacd0c34973dc8d}} 
+\index{World@{World}!draw@{draw}}
+\index{draw@{draw}!World@{World}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void World\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_world_8cpp_source}{World.\+cpp}}.
+
+\mbox{\Hypertarget{class_world_a36c003f54e14e022a360551af5e7923e}\label{class_world_a36c003f54e14e022a360551af5e7923e}} 
+\index{World@{World}!update@{update}}
+\index{update@{update}!World@{World}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void World\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_world_8cpp_source}{World.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_world_a6f3b09177168e5a7b34fd9418a94136a}\label{class_world_a6f3b09177168e5a7b34fd9418a94136a}} 
+\index{World@{World}!mBackground@{mBackground}}
+\index{mBackground@{mBackground}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mBackground}{mBackground}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sprite_node}{Sprite\+Node}}$\ast$ World\+::m\+Background\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a9c75c7433b37fc02925d6425e1b7f8a9}\label{class_world_a9c75c7433b37fc02925d6425e1b7f8a9}} 
+\index{World@{World}!mEnemy@{mEnemy}}
+\index{mEnemy@{mEnemy}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mEnemy}{mEnemy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aircraft}{Aircraft}}$\ast$ World\+::m\+Enemy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a625a8dbdd805000904fb376215ca4c0a}\label{class_world_a625a8dbdd805000904fb376215ca4c0a}} 
+\index{World@{World}!mGame@{mGame}}
+\index{mGame@{mGame}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mGame}{mGame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game}{Game}}$\ast$ World\+::m\+Game\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a5e511d7599995d30084959c91d98e13d}\label{class_world_a5e511d7599995d30084959c91d98e13d}} 
+\index{World@{World}!mPlayerAircraft@{mPlayerAircraft}}
+\index{mPlayerAircraft@{mPlayerAircraft}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mPlayerAircraft}{mPlayerAircraft}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aircraft}{Aircraft}}$\ast$ World\+::m\+Player\+Aircraft\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_abf9d49d6f67de1caff82e111a4f29040}\label{class_world_abf9d49d6f67de1caff82e111a4f29040}} 
+\index{World@{World}!mSceneGraph@{mSceneGraph}}
+\index{mSceneGraph@{mSceneGraph}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mSceneGraph}{mSceneGraph}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_node}{Scene\+Node}}$\ast$ World\+::m\+Scene\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a39fc72e56eb0aa3f35d6cbb96feff2fd}\label{class_world_a39fc72e56eb0aa3f35d6cbb96feff2fd}} 
+\index{World@{World}!mSceneLayers@{mSceneLayers}}
+\index{mSceneLayers@{mSceneLayers}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mSceneLayers}{mSceneLayers}}
+{\footnotesize\ttfamily std\+::array$<$\mbox{\hyperlink{class_scene_node}{Scene\+Node}}$\ast$, 2$>$ World\+::m\+Scene\+Layers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a1c2d240ef6483547a5c2e5ded0e3a150}\label{class_world_a1c2d240ef6483547a5c2e5ded0e3a150}} 
+\index{World@{World}!mScrollSpeed@{mScrollSpeed}}
+\index{mScrollSpeed@{mScrollSpeed}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mScrollSpeed}{mScrollSpeed}}
+{\footnotesize\ttfamily float World\+::m\+Scroll\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a8bde7886e9d66e6bda46921d97186f66}\label{class_world_a8bde7886e9d66e6bda46921d97186f66}} 
+\index{World@{World}!mSpawnPosition@{mSpawnPosition}}
+\index{mSpawnPosition@{mSpawnPosition}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mSpawnPosition}{mSpawnPosition}}
+{\footnotesize\ttfamily XMFLOAT2 World\+::m\+Spawn\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a3be772106be584dff01efa4a27fc13a7}\label{class_world_a3be772106be584dff01efa4a27fc13a7}} 
+\index{World@{World}!mWorldBounds@{mWorldBounds}}
+\index{mWorldBounds@{mWorldBounds}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mWorldBounds}{mWorldBounds}}
+{\footnotesize\ttfamily XMFLOAT4 World\+::m\+World\+Bounds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a2921ba147a33d7ef773d3b4d68ab498c}\label{class_world_a2921ba147a33d7ef773d3b4d68ab498c}} 
+\index{World@{World}!plane1@{plane1}}
+\index{plane1@{plane1}!World@{World}}
+\doxysubsubsection{\texorpdfstring{plane1}{plane1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aircraft}{Aircraft}}$\ast$ World\+::plane1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+\mbox{\Hypertarget{class_world_a9dd0026a738666a0e988dc18300ade5a}\label{class_world_a9dd0026a738666a0e988dc18300ade5a}} 
+\index{World@{World}!plane2@{plane2}}
+\index{plane2@{plane2}!World@{World}}
+\doxysubsubsection{\texorpdfstring{plane2}{plane2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aircraft}{Aircraft}}$\ast$ World\+::plane2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_world_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{_world_8hpp_source}{World.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Direct\+X12\+Engine/\+Direct\+X12\+Engine/\mbox{\hyperlink{_world_8hpp}{World.\+hpp}}\item 
+Direct\+X12\+Engine/\+Direct\+X12\+Engine/\mbox{\hyperlink{_world_8cpp}{World.\+cpp}}\end{DoxyCompactItemize}

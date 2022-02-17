@@ -1,0 +1,97 @@
+\hypertarget{_scene_node_8hpp_source}{}\doxysection{Scene\+Node.\+hpp}
+\label{_scene_node_8hpp_source}\index{DirectX12Engine/DirectX12Engine/SceneNode.hpp@{DirectX12Engine/DirectX12Engine/SceneNode.hpp}}
+\mbox{\hyperlink{_scene_node_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../../Common/d3dApp.h"{}}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}../../Common/MathHelper.h"{}}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}../../Common/UploadBuffer.h"{}}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}../../Common/GeometryGenerator.h"{}}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}../../Common/Camera.h"{}}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_frame_resource_8h}{FrameResource.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00010}00010 \textcolor{keyword}{using} Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00011}00011 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespace_direct_x}{DirectX}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00012}00012 \textcolor{keyword}{using namespace }DirectX::PackedVector;}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00014}00014 \textcolor{preprocessor}{\#pragma comment(lib, "{}d3dcompiler.lib"{}})}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#pragma comment(lib, "{}D3D12.lib"{}})}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00017}00017 \textcolor{keyword}{class }\mbox{\hyperlink{class_game}{Game}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00019}\mbox{\hyperlink{struct_render_item}{00019}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_render_item}{RenderItem}}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00021}\mbox{\hyperlink{struct_render_item_ad6c4cbd7fea14ab4b71bd3be38208487}{00021}}     \mbox{\hyperlink{struct_render_item_ad6c4cbd7fea14ab4b71bd3be38208487}{RenderItem}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00022}00022     \textcolor{comment}{// World matrix of the shape that describes the object's local space}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00023}00023     \textcolor{comment}{// relative to the world space, which defines the position, orientation,}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00024}00024     \textcolor{comment}{// and scale of the object in the world.}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00025}\mbox{\hyperlink{struct_render_item_a2e0a651d0ad4ba7975455e22fbde1a28}{00025}}     XMFLOAT4X4 \mbox{\hyperlink{class_world}{World}} = \mbox{\hyperlink{class_math_helper_a68b4e9af95b1a36aad30ea80839f6b19}{MathHelper::Identity4x4}}();}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00026}\mbox{\hyperlink{struct_render_item_ac6799548474209d172cbb3d337f56074}{00026}}     XMFLOAT4X4 \mbox{\hyperlink{struct_render_item_ac6799548474209d172cbb3d337f56074}{TexTransform}} = \mbox{\hyperlink{class_math_helper_a68b4e9af95b1a36aad30ea80839f6b19}{MathHelper::Identity4x4}}();}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00027}\mbox{\hyperlink{struct_render_item_a356068fffd78f172c796d44fe02d08d2}{00027}}     \mbox{\hyperlink{struct_material}{Material}}* \mbox{\hyperlink{struct_render_item_a356068fffd78f172c796d44fe02d08d2}{Mat}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00028}\mbox{\hyperlink{struct_render_item_aca6ae2de91638af530fd5ce91fea3306}{00028}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_render_item_aca6ae2de91638af530fd5ce91fea3306}{NumFramesDirty}} = \mbox{\hyperlink{d3d_util_8h_a7c82b7821d2662eb6e0cfdc08a6c4bd4}{gNumFrameResources}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00029}00029     \textcolor{comment}{// Index into GPU constant buffer corresponding to the ObjectCB for this render item.}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00030}\mbox{\hyperlink{struct_render_item_a4a4015284acd79469b70c358b6c1c2a1}{00030}}     UINT \mbox{\hyperlink{struct_render_item_a4a4015284acd79469b70c358b6c1c2a1}{ObjCBIndex}} = -\/1;}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00031}\mbox{\hyperlink{struct_render_item_a7e4ddbefdc41b7efcad3c3a4b0ceccd9}{00031}}     \mbox{\hyperlink{struct_mesh_geometry}{MeshGeometry}}* \mbox{\hyperlink{struct_render_item_a7e4ddbefdc41b7efcad3c3a4b0ceccd9}{Geo}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00032}00032     \textcolor{comment}{// Primitive topology.}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00033}\mbox{\hyperlink{struct_render_item_ab3aad9050526250c4877956789e50b3a}{00033}}     D3D12\_PRIMITIVE\_TOPOLOGY \mbox{\hyperlink{struct_render_item_ab3aad9050526250c4877956789e50b3a}{PrimitiveType}} = D3D\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST;}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00034}00034     \textcolor{comment}{// DrawIndexedInstanced parameters.}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00035}\mbox{\hyperlink{struct_render_item_ad95fafa012c0d99c216b998f11207e38}{00035}}     UINT \mbox{\hyperlink{struct_render_item_ad95fafa012c0d99c216b998f11207e38}{IndexCount}} = 0;}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00036}\mbox{\hyperlink{struct_render_item_a979179c6dd354cd329563e3599245463}{00036}}     UINT \mbox{\hyperlink{struct_render_item_a979179c6dd354cd329563e3599245463}{StartIndexLocation}} = 0;}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00037}\mbox{\hyperlink{struct_render_item_a3750ef7b2791ea922df46e222649f3dc}{00037}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_render_item_a3750ef7b2791ea922df46e222649f3dc}{BaseVertexLocation}} = 0;}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00038}00038     }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00039}00039     }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00040}00040 \};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00042}\mbox{\hyperlink{class_scene_node}{00042}} \textcolor{keyword}{class }\mbox{\hyperlink{class_scene_node}{SceneNode}}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00043}00043 \{}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00044}00044 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00045}\mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{00045}}     \textcolor{keyword}{typedef} std::unique\_ptr<SceneNode> \mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00048}00048 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00049}00049     \mbox{\hyperlink{class_scene_node_af1f3bf5e98c8b2c90b36057df2577d1a}{SceneNode}}(\mbox{\hyperlink{class_game}{Game}}* \mbox{\hyperlink{class_scene_node_a06d1261ef839789469f228e7a7f2bfb9}{game}});}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00051}00051     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_acdfa2c2ba28bce076c886eaba2d9e650}{attachChild}}(\mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}} child);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00052}00052     \mbox{\hyperlink{class_scene_node_aaf5c9ad8475874b51b70e400822f2e9a}{Ptr}}                      \mbox{\hyperlink{class_scene_node_a3b9681eb3db7d9e575945b57e275e040}{detachChild}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_scene_node}{SceneNode}}\& node);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00054}00054     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_a858b7a088c0a2d01aaa90baf05d58d08}{update}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_game_timer}{GameTimer}}\& gt);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00055}00055     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_a41b1a847182e49103bc145bd4604e056}{draw}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00056}00056     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_a67ca883a91d8c45004a0786330548d8f}{build}}();}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00058}00058     XMFLOAT3                \mbox{\hyperlink{class_scene_node_a6ba2f5754854829e7e49f135bb4fce45}{getWorldPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00059}00059     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_a45f8882749060b059fe26eb02f7f843b}{setPosition}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00060}00060     XMFLOAT3                \mbox{\hyperlink{class_scene_node_a1a5ce797162b569b79494b7c2a696713}{getWorldRotation}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00061}00061     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_a66fa14e7553900ae540f13e4dc5f749b}{setWorldRotation}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00062}00062     XMFLOAT3                \mbox{\hyperlink{class_scene_node_af875844defd567ae06c579a3244ff025}{getWorldScale}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00063}00063     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_a753cea60b8a939a82a47258f4a51df82}{setScale}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00065}00065     XMFLOAT4X4              \mbox{\hyperlink{class_scene_node_a58fbaea11dad15681acbe6abdbff03a7}{getWorldTransform}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00066}00066     XMFLOAT4X4              \mbox{\hyperlink{class_scene_node_a5e503eeca953d36b652a12ceadb64d28}{getTransform}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00068}00068     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_aec657f40def4be5c901192ec85027a35}{move}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00069}00069 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00070}00070     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}            \mbox{\hyperlink{class_scene_node_a49981a42b39c510d272aa5db19f7b4ec}{updateCurrent}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_game_timer}{GameTimer}}\& gt);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00071}00071     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_abffcfe9a66a65d5fe0d6f25c89e8e1a0}{updateChildren}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_game_timer}{GameTimer}}\& gt);}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00073}00073     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}            \mbox{\hyperlink{class_scene_node_a0d7d32b925dde5ed087f112774a044b8}{drawCurrent}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00074}00074     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_a295eb84f50bb5db5cf7bc1394535c719}{drawChildren}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00075}00075     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void}            \mbox{\hyperlink{class_scene_node_af79c6134a7706a5901c7742b5f735956}{buildCurrent}}();}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00076}00076     \textcolor{keywordtype}{void}                    \mbox{\hyperlink{class_scene_node_aeb2a680b5c91f33af2b53e098645c711}{buildChildren}}();}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00078}00078 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00079}\mbox{\hyperlink{class_scene_node_a06d1261ef839789469f228e7a7f2bfb9}{00079}}     \mbox{\hyperlink{class_game}{Game}}* \mbox{\hyperlink{class_scene_node_a06d1261ef839789469f228e7a7f2bfb9}{game}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00080}\mbox{\hyperlink{class_scene_node_a51b22a4d6789039a96ebab097ed03db0}{00080}}     \mbox{\hyperlink{struct_render_item}{RenderItem}}* \mbox{\hyperlink{class_scene_node_a51b22a4d6789039a96ebab097ed03db0}{renderer}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00081}00081 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00082}\mbox{\hyperlink{class_scene_node_a4e9f5e994fac36feb45ef05a59e2c505}{00082}}     XMFLOAT3                \mbox{\hyperlink{class_scene_node_a4e9f5e994fac36feb45ef05a59e2c505}{mWorldPosition}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00083}\mbox{\hyperlink{class_scene_node_a86f07cbb8fae205ec67e4f30b8af2346}{00083}}     XMFLOAT3                \mbox{\hyperlink{class_scene_node_a86f07cbb8fae205ec67e4f30b8af2346}{mWorldRotation}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00084}\mbox{\hyperlink{class_scene_node_a53aa45813461b2a5dcb5e5cd019f788e}{00084}}     XMFLOAT3                \mbox{\hyperlink{class_scene_node_a53aa45813461b2a5dcb5e5cd019f788e}{mWorldScaling}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00085}\mbox{\hyperlink{class_scene_node_a3cf701e9cf19d52de659bbe75646c37d}{00085}}     std::vector<Ptr>        \mbox{\hyperlink{class_scene_node_a3cf701e9cf19d52de659bbe75646c37d}{mChildren}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00086}\mbox{\hyperlink{class_scene_node_aa478ebb376c411801a004bcc2590046d}{00086}}     \mbox{\hyperlink{class_scene_node}{SceneNode}}* \mbox{\hyperlink{class_scene_node_aa478ebb376c411801a004bcc2590046d}{mParent}};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00087}00087 \};}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00089}00089 \textcolor{comment}{//std::vector<std::unique\_ptr<RenderItem>> mAllRitems;}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00091}00091 \textcolor{comment}{}\textcolor{comment}{//std::vector<RenderItem*> mOpaqueRitems;}}
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_scene_node_8hpp_source_l00093}00093 }
+
+\end{DoxyCode}

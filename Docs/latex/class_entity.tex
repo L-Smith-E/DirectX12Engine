@@ -1,0 +1,117 @@
+\hypertarget{class_entity}{}\doxysection{Entity Class Reference}
+\label{class_entity}\index{Entity@{Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+hpp$>$}
+
+Inheritance diagram for Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_entity}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a9f6b0ce5dcbdb9107ba1972da24003a6}{Entity}} (\mbox{\hyperlink{class_game}{Game}} $\ast$\mbox{\hyperlink{class_scene_node_a06d1261ef839789469f228e7a7f2bfb9}{game}})
+\item 
+void \mbox{\hyperlink{class_entity_a472e1690df5fb48c6c7f052e4cb39c78}{set\+Velocity}} (XMFLOAT3 velocity)
+\item 
+void \mbox{\hyperlink{class_entity_abb3c22fe7e78968131560642e360e12b}{set\+Velocity}} (float vx, float vy, float vz)
+\item 
+XMFLOAT3 \mbox{\hyperlink{class_entity_af4fcc5c9f7e9d705502269444ef3eca3}{get\+Velocity}} () const
+\item 
+virtual void \mbox{\hyperlink{class_entity_ac2ba9cb8ca54fff11ad7397334edcd94}{update\+Current}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+XMFLOAT3 \mbox{\hyperlink{class_entity_a15aa77787228598dfa35f5f822695c43}{m\+Velocity}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_entity_8hpp_source_l00004}{4}} of file \mbox{\hyperlink{_entity_8hpp_source}{Entity.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_entity_a9f6b0ce5dcbdb9107ba1972da24003a6}\label{class_entity_a9f6b0ce5dcbdb9107ba1972da24003a6}} 
+\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game}{Game}} $\ast$}]{game }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_entity_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_entity_8cpp_source}{Entity.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entity_af4fcc5c9f7e9d705502269444ef3eca3}\label{class_entity_af4fcc5c9f7e9d705502269444ef3eca3}} 
+\index{Entity@{Entity}!getVelocity@{getVelocity}}
+\index{getVelocity@{getVelocity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
+{\footnotesize\ttfamily XMFLOAT3 Entity\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_entity_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_entity_8cpp_source}{Entity.\+cpp}}.
+
+\mbox{\Hypertarget{class_entity_abb3c22fe7e78968131560642e360e12b}\label{class_entity_abb3c22fe7e78968131560642e360e12b}} 
+\index{Entity@{Entity}!setVelocity@{setVelocity}}
+\index{setVelocity@{setVelocity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{setVelocity()}{setVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Entity\+::set\+Velocity (\begin{DoxyParamCaption}\item[{float}]{vx,  }\item[{float}]{vy,  }\item[{float}]{vz }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_entity_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_entity_8cpp_source}{Entity.\+cpp}}.
+
+\mbox{\Hypertarget{class_entity_a472e1690df5fb48c6c7f052e4cb39c78}\label{class_entity_a472e1690df5fb48c6c7f052e4cb39c78}} 
+\index{Entity@{Entity}!setVelocity@{setVelocity}}
+\index{setVelocity@{setVelocity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{setVelocity()}{setVelocity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Entity\+::set\+Velocity (\begin{DoxyParamCaption}\item[{XMFLOAT3}]{velocity }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_entity_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_entity_8cpp_source}{Entity.\+cpp}}.
+
+\mbox{\Hypertarget{class_entity_ac2ba9cb8ca54fff11ad7397334edcd94}\label{class_entity_ac2ba9cb8ca54fff11ad7397334edcd94}} 
+\index{Entity@{Entity}!updateCurrent@{updateCurrent}}
+\index{updateCurrent@{updateCurrent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{updateCurrent()}{updateCurrent()}}
+{\footnotesize\ttfamily void Entity\+::update\+Current (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_scene_node_a49981a42b39c510d272aa5db19f7b4ec}{Scene\+Node}}.
+
+
+
+Definition at line \mbox{\hyperlink{_entity_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_entity_8cpp_source}{Entity.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_entity_a15aa77787228598dfa35f5f822695c43}\label{class_entity_a15aa77787228598dfa35f5f822695c43}} 
+\index{Entity@{Entity}!mVelocity@{mVelocity}}
+\index{mVelocity@{mVelocity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{mVelocity}{mVelocity}}
+{\footnotesize\ttfamily XMFLOAT3 Entity\+::m\+Velocity}
+
+
+
+Definition at line \mbox{\hyperlink{_entity_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{_entity_8hpp_source}{Entity.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Direct\+X12\+Engine/\+Direct\+X12\+Engine/\mbox{\hyperlink{_entity_8hpp}{Entity.\+hpp}}\item 
+Direct\+X12\+Engine/\+Direct\+X12\+Engine/\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,664 @@
+\hypertarget{class_game}{}\doxysection{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+
+
+{\ttfamily \#include $<$Game.\+hpp$>$}
+
+Inheritance diagram for Game\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_a3f68a62a1fe1ca8dcd1deb054b384cef}{Game}} (HINSTANCE h\+Instance)
+\item 
+\mbox{\hyperlink{class_game_a293c79673d4c15f55f1ab7f3d1809ddb}{Game}} (const \mbox{\hyperlink{class_game}{Game}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{class_game}{Game}} \& \mbox{\hyperlink{class_game_a9bda5763ea460634fef947be2530c8f5}{operator=}} (const \mbox{\hyperlink{class_game}{Game}} \&rhs)=delete
+\item 
+\mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_game_a16354d232327f6c21319713bf6983674}{Initialize}} () override
+\item 
+ID3\+D12\+Graphics\+Command\+List $\ast$ \mbox{\hyperlink{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}{get\+Cmd\+List}} ()
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $>$ $>$ \& \mbox{\hyperlink{class_game_aab13f3fdd19f7fec4d64922e36cf3088}{get\+Render\+Items}} ()
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_material}{Material}} $>$ $>$ \& \mbox{\hyperlink{class_game_a2ab854095110829c9fb607b8bf3b50e1}{get\+Materials}} ()
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_mesh_geometry}{Mesh\+Geometry}} $>$ $>$ \& \mbox{\hyperlink{class_game_a8fecc6dedc120a94d9940ad5d7518242}{get\+Geometries}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $>$ $>$ \mbox{\hyperlink{class_game_a2a9401ba48c48468ceef6771309ddff7}{m\+Frame\+Resources}}
+\item 
+\mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $\ast$ \mbox{\hyperlink{class_game_a6119ac12b9dafae4e105ac9b4e80c1b2}{m\+Curr\+Frame\+Resource}} = nullptr
+\item 
+int \mbox{\hyperlink{class_game_a1f687875ba94b87162a7dc90b80b0092}{m\+Curr\+Frame\+Resource\+Index}} = 0
+\item 
+UINT \mbox{\hyperlink{class_game_ad7a064571877d4b8becd1f53c98cafa9}{m\+Cbv\+Srv\+Descriptor\+Size}} = 0
+\item 
+Com\+Ptr$<$ ID3\+D12\+Root\+Signature $>$ \mbox{\hyperlink{class_game_a987fac1aded1b4f4b9495eb0f1464c12}{m\+Root\+Signature}} = nullptr
+\item 
+Com\+Ptr$<$ ID3\+D12\+Descriptor\+Heap $>$ \mbox{\hyperlink{class_game_a85befdbe03bbcdd30ad94cd64e0a1bd1}{m\+Srv\+Descriptor\+Heap}} = nullptr
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_mesh_geometry}{Mesh\+Geometry}} $>$ $>$ \mbox{\hyperlink{class_game_a0e53612a0a54bdd46ea1d8b071260b77}{m\+Geometries}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_material}{Material}} $>$ $>$ \mbox{\hyperlink{class_game_a871400f233e46cc637f383106e89dd71}{m\+Materials}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_texture}{Texture}} $>$ $>$ \mbox{\hyperlink{class_game_a914940e399d2418018640ef3da130371}{m\+Textures}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Com\+Ptr$<$ ID3\+DBlob $>$ $>$ \mbox{\hyperlink{class_game_a5d821a872c24ff21b97300d24e37ac23}{m\+Shaders}}
+\item 
+std\+::vector$<$ D3\+D12\+\_\+\+INPUT\+\_\+\+ELEMENT\+\_\+\+DESC $>$ \mbox{\hyperlink{class_game_a4f5868aab9c96810369a9ab91dec1d2b}{m\+Input\+Layout}}
+\item 
+Com\+Ptr$<$ ID3\+D12\+Pipeline\+State $>$ \mbox{\hyperlink{class_game_acb640d01b04bbb82f3f2b02ac09554b2}{m\+Opaque\+PSO}} = nullptr
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $>$ $>$ \mbox{\hyperlink{class_game_aa8184a727f9071c3db7e5efa3a6dce49}{m\+All\+Ritems}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_game_a626d5d97ee0e536b99703094828f5f79}{m\+Opaque\+Ritems}}
+\item 
+\mbox{\hyperlink{struct_pass_constants}{Pass\+Constants}} \mbox{\hyperlink{class_game_ad2759008a4629646703b6e34e0501f6c}{m\+Main\+Pass\+CB}}
+\item 
+POINT \mbox{\hyperlink{class_game_ab5cce9551fdd8b346b36747d6f4d3a38}{m\+Last\+Mouse\+Pos}}
+\item 
+\mbox{\hyperlink{class_camera}{Camera}} \mbox{\hyperlink{class_game_a042dbbcf404fad865bdf72e534c675d5}{m\+Camera}}
+\item 
+\mbox{\hyperlink{class_world}{World}} \mbox{\hyperlink{class_game_adbc6dc1be92656b79625575a5d84e110}{m\+World}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_game_a7bd6d8d7aa09aa1196b4fa463d2ac41b}{On\+Resize}} () override
+\item 
+virtual void \mbox{\hyperlink{class_game_ab9244991993b5a1cbde3f1f2d73f2745}{Update}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt) override
+\item 
+virtual void \mbox{\hyperlink{class_game_afc62dae28f3cd775d8110ff5386c1fe1}{Draw}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt) override
+\item 
+virtual void \mbox{\hyperlink{class_game_a605e728835f29b7b320f6c9c8de05d00}{On\+Mouse\+Down}} (WPARAM btn\+State, int x, int y) override
+\item 
+virtual void \mbox{\hyperlink{class_game_a020e0c5f01a724bfef357bfe29f800c3}{On\+Mouse\+Up}} (WPARAM btn\+State, int x, int y) override
+\item 
+virtual void \mbox{\hyperlink{class_game_ada0f3fffa1b4560465128b1eff7d1ef5}{On\+Mouse\+Move}} (WPARAM btn\+State, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_game_a97cb6124867ae61c31a23dfc22de3c6a}{On\+Keyboard\+Input}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a077400cce3bd3e41333b8228b386e450}{Update\+Camera}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a7e0c6faa5f2386c3ad80fe5d5a9e11e4}{Animate\+Materials}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a1bdfe76a8bfdff007837cb2d2c3c59d6}{Update\+Object\+CBs}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt)
+\item 
+void \mbox{\hyperlink{class_game_a4b7fd5dda779a7dd834dd7d26566b657}{Update\+Material\+CBs}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt)
+\item 
+void \mbox{\hyperlink{class_game_aa3bb0452e306c88eadfb2d4eedf5ad25}{Update\+Main\+Pass\+CB}} (const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&gt)
+\item 
+void \mbox{\hyperlink{class_game_ad23eba18656a646756a98bcda25a98a4}{Load\+Textures}} ()
+\item 
+void \mbox{\hyperlink{class_game_aa02e07384ccea21f7421ca60967c1fa5}{Build\+Root\+Signature}} ()
+\item 
+void \mbox{\hyperlink{class_game_a62c79f98ef99a7ee0c54e3ae23ab0173}{Build\+Descriptor\+Heaps}} ()
+\item 
+void \mbox{\hyperlink{class_game_adc0692c304c05a5a281d88622b39c498}{Build\+Shaders\+And\+Input\+Layout}} ()
+\item 
+void \mbox{\hyperlink{class_game_a6ee7b6d7f54345be7f6b406166dccb45}{Build\+Shape\+Geometry}} ()
+\item 
+void \mbox{\hyperlink{class_game_aa0934b45052f43934eb93fd013ca23a8}{Build\+PSOs}} ()
+\item 
+void \mbox{\hyperlink{class_game_a3f6f10460db9b4b5561656d6be357f4f}{Build\+Frame\+Resources}} ()
+\item 
+void \mbox{\hyperlink{class_game_a8150ddca90b1ce3c38becca970246d99}{Build\+Materials}} ()
+\item 
+void \mbox{\hyperlink{class_game_abf31d9be82e627510c9c2d6e0e012cc8}{Build\+Render\+Items}} ()
+\item 
+void \mbox{\hyperlink{class_game_a58fb5b65b969ba19ac0f5517c91bf9ae}{Draw\+Render\+Items}} (ID3\+D12\+Graphics\+Command\+List $\ast$cmd\+List, const std\+::vector$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $\ast$ $>$ \&ritems)
+\item 
+std\+::array$<$ const CD3\+DX12\+\_\+\+STATIC\+\_\+\+SAMPLER\+\_\+\+DESC, 6 $>$ \mbox{\hyperlink{class_game_a6e8f674ef01b7480d39fe90374301c2d}{Get\+Static\+Samplers}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00003}{3}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_a3f68a62a1fe1ca8dcd1deb054b384cef}\label{class_game_a3f68a62a1fe1ca8dcd1deb054b384cef}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}\item[{HINSTANCE}]{h\+Instance }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a293c79673d4c15f55f1ab7f3d1809ddb}\label{class_game_a293c79673d4c15f55f1ab7f3d1809ddb}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game}{Game}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}} 
+\index{Game@{Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{$\sim$Game()}{~Game()}}
+{\footnotesize\ttfamily Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_a7e0c6faa5f2386c3ad80fe5d5a9e11e4}\label{class_game_a7e0c6faa5f2386c3ad80fe5d5a9e11e4}} 
+\index{Game@{Game}!AnimateMaterials@{AnimateMaterials}}
+\index{AnimateMaterials@{AnimateMaterials}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{AnimateMaterials()}{AnimateMaterials()}}
+{\footnotesize\ttfamily void Game\+::\+Animate\+Materials (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00267}{267}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a62c79f98ef99a7ee0c54e3ae23ab0173}\label{class_game_a62c79f98ef99a7ee0c54e3ae23ab0173}} 
+\index{Game@{Game}!BuildDescriptorHeaps@{BuildDescriptorHeaps}}
+\index{BuildDescriptorHeaps@{BuildDescriptorHeaps}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildDescriptorHeaps()}{BuildDescriptorHeaps()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Descriptor\+Heaps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00434}{434}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a3f6f10460db9b4b5561656d6be357f4f}\label{class_game_a3f6f10460db9b4b5561656d6be357f4f}} 
+\index{Game@{Game}!BuildFrameResources@{BuildFrameResources}}
+\index{BuildFrameResources@{BuildFrameResources}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildFrameResources()}{BuildFrameResources()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Frame\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00588}{588}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a8150ddca90b1ce3c38becca970246d99}\label{class_game_a8150ddca90b1ce3c38becca970246d99}} 
+\index{Game@{Game}!BuildMaterials@{BuildMaterials}}
+\index{BuildMaterials@{BuildMaterials}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildMaterials()}{BuildMaterials()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Materials (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00597}{597}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_aa0934b45052f43934eb93fd013ca23a8}\label{class_game_aa0934b45052f43934eb93fd013ca23a8}} 
+\index{Game@{Game}!BuildPSOs@{BuildPSOs}}
+\index{BuildPSOs@{BuildPSOs}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildPSOs()}{BuildPSOs()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+PSOs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00555}{555}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_abf31d9be82e627510c9c2d6e0e012cc8}\label{class_game_abf31d9be82e627510c9c2d6e0e012cc8}} 
+\index{Game@{Game}!BuildRenderItems@{BuildRenderItems}}
+\index{BuildRenderItems@{BuildRenderItems}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildRenderItems()}{BuildRenderItems()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Render\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00631}{631}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_aa02e07384ccea21f7421ca60967c1fa5}\label{class_game_aa02e07384ccea21f7421ca60967c1fa5}} 
+\index{Game@{Game}!BuildRootSignature@{BuildRootSignature}}
+\index{BuildRootSignature@{BuildRootSignature}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildRootSignature()}{BuildRootSignature()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Root\+Signature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00390}{390}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_adc0692c304c05a5a281d88622b39c498}\label{class_game_adc0692c304c05a5a281d88622b39c498}} 
+\index{Game@{Game}!BuildShadersAndInputLayout@{BuildShadersAndInputLayout}}
+\index{BuildShadersAndInputLayout@{BuildShadersAndInputLayout}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildShadersAndInputLayout()}{BuildShadersAndInputLayout()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Shaders\+And\+Input\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00490}{490}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a6ee7b6d7f54345be7f6b406166dccb45}\label{class_game_a6ee7b6d7f54345be7f6b406166dccb45}} 
+\index{Game@{Game}!BuildShapeGeometry@{BuildShapeGeometry}}
+\index{BuildShapeGeometry@{BuildShapeGeometry}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{BuildShapeGeometry()}{BuildShapeGeometry()}}
+{\footnotesize\ttfamily void Game\+::\+Build\+Shape\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00505}{505}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_afc62dae28f3cd775d8110ff5386c1fe1}\label{class_game_afc62dae28f3cd775d8110ff5386c1fe1}} 
+\index{Game@{Game}!Draw@{Draw}}
+\index{Draw@{Draw}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Game\+::\+Draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_d3_d_app_afc159e00500db82ec59edf2bc95e5e6a}{D3\+DApp}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a58fb5b65b969ba19ac0f5517c91bf9ae}\label{class_game_a58fb5b65b969ba19ac0f5517c91bf9ae}} 
+\index{Game@{Game}!DrawRenderItems@{DrawRenderItems}}
+\index{DrawRenderItems@{DrawRenderItems}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{DrawRenderItems()}{DrawRenderItems()}}
+{\footnotesize\ttfamily void Game\+::\+Draw\+Render\+Items (\begin{DoxyParamCaption}\item[{ID3\+D12\+Graphics\+Command\+List $\ast$}]{cmd\+List,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $\ast$ $>$ \&}]{ritems }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00640}{640}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}\label{class_game_a9283a2ccc7cad9fdd4b25f7979d3c5c1}} 
+\index{Game@{Game}!getCmdList@{getCmdList}}
+\index{getCmdList@{getCmdList}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getCmdList()}{getCmdList()}}
+{\footnotesize\ttfamily ID3\+D12\+Graphics\+Command\+List $\ast$ Game\+::get\+Cmd\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00086}{86}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a8fecc6dedc120a94d9940ad5d7518242}\label{class_game_a8fecc6dedc120a94d9940ad5d7518242}} 
+\index{Game@{Game}!getGeometries@{getGeometries}}
+\index{getGeometries@{getGeometries}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getGeometries()}{getGeometries()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_mesh_geometry}{Mesh\+Geometry}} $>$ $>$ \& Game\+::get\+Geometries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a2ab854095110829c9fb607b8bf3b50e1}\label{class_game_a2ab854095110829c9fb607b8bf3b50e1}} 
+\index{Game@{Game}!getMaterials@{getMaterials}}
+\index{getMaterials@{getMaterials}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getMaterials()}{getMaterials()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_material}{Material}} $>$ $>$ \& Game\+::get\+Materials (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00088}{88}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_aab13f3fdd19f7fec4d64922e36cf3088}\label{class_game_aab13f3fdd19f7fec4d64922e36cf3088}} 
+\index{Game@{Game}!getRenderItems@{getRenderItems}}
+\index{getRenderItems@{getRenderItems}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getRenderItems()}{getRenderItems()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_render_item}{Render\+Item}} $>$ $>$ \& Game\+::get\+Render\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00087}{87}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a6e8f674ef01b7480d39fe90374301c2d}\label{class_game_a6e8f674ef01b7480d39fe90374301c2d}} 
+\index{Game@{Game}!GetStaticSamplers@{GetStaticSamplers}}
+\index{GetStaticSamplers@{GetStaticSamplers}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetStaticSamplers()}{GetStaticSamplers()}}
+{\footnotesize\ttfamily std\+::array$<$ const CD3\+DX12\+\_\+\+STATIC\+\_\+\+SAMPLER\+\_\+\+DESC, 6 $>$ Game\+::\+Get\+Static\+Samplers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00674}{674}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a16354d232327f6c21319713bf6983674}\label{class_game_a16354d232327f6c21319713bf6983674}} 
+\index{Game@{Game}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily bool Game\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d3_d_app_a961fa79170dcbde858923a5250c322be}{D3\+DApp}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_ad23eba18656a646756a98bcda25a98a4}\label{class_game_ad23eba18656a646756a98bcda25a98a4}} 
+\index{Game@{Game}!LoadTextures@{LoadTextures}}
+\index{LoadTextures@{LoadTextures}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{LoadTextures()}{LoadTextures()}}
+{\footnotesize\ttfamily void Game\+::\+Load\+Textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00357}{357}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a97cb6124867ae61c31a23dfc22de3c6a}\label{class_game_a97cb6124867ae61c31a23dfc22de3c6a}} 
+\index{Game@{Game}!OnKeyboardInput@{OnKeyboardInput}}
+\index{OnKeyboardInput@{OnKeyboardInput}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnKeyboardInput()}{OnKeyboardInput()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Keyboard\+Input (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a605e728835f29b7b320f6c9c8de05d00}\label{class_game_a605e728835f29b7b320f6c9c8de05d00}} 
+\index{Game@{Game}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{WPARAM}]{btn\+State,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d3_d_app_afa0d546d52408a9b55866e6ba065ddae}{D3\+DApp}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_ada0f3fffa1b4560465128b1eff7d1ef5}\label{class_game_ada0f3fffa1b4560465128b1eff7d1ef5}} 
+\index{Game@{Game}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnMouseMove()}{OnMouseMove()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{WPARAM}]{btn\+State,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d3_d_app_aa5270048920cd8a62dc07c7ed5e97622}{D3\+DApp}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a020e0c5f01a724bfef357bfe29f800c3}\label{class_game_a020e0c5f01a724bfef357bfe29f800c3}} 
+\index{Game@{Game}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnMouseUp()}{OnMouseUp()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{WPARAM}]{btn\+State,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d3_d_app_a98be07429ac3ffb5f76cbe831f9d94de}{D3\+DApp}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a7bd6d8d7aa09aa1196b4fa463d2ac41b}\label{class_game_a7bd6d8d7aa09aa1196b4fa463d2ac41b}} 
+\index{Game@{Game}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{OnResize()}{OnResize()}}
+{\footnotesize\ttfamily void Game\+::\+On\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d3_d_app_a4c1b99cd01576c413d3a50d1435f1b8a}{D3\+DApp}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a9bda5763ea460634fef947be2530c8f5}\label{class_game_a9bda5763ea460634fef947be2530c8f5}} 
+\index{Game@{Game}!operator=@{operator=}}
+\index{operator=@{operator=}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game}{Game}} \& Game\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game}{Game}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_game_ab9244991993b5a1cbde3f1f2d73f2745}\label{class_game_ab9244991993b5a1cbde3f1f2d73f2745}} 
+\index{Game@{Game}!Update@{Update}}
+\index{Update@{Update}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_d3_d_app_ae31029e118e14ee3ae4649f1c6f8d2dd}{D3\+DApp}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a077400cce3bd3e41333b8228b386e450}\label{class_game_a077400cce3bd3e41333b8228b386e450}} 
+\index{Game@{Game}!UpdateCamera@{UpdateCamera}}
+\index{UpdateCamera@{UpdateCamera}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UpdateCamera()}{UpdateCamera()}}
+{\footnotesize\ttfamily void Game\+::\+Update\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00249}{249}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_aa3bb0452e306c88eadfb2d4eedf5ad25}\label{class_game_aa3bb0452e306c88eadfb2d4eedf5ad25}} 
+\index{Game@{Game}!UpdateMainPassCB@{UpdateMainPassCB}}
+\index{UpdateMainPassCB@{UpdateMainPassCB}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UpdateMainPassCB()}{UpdateMainPassCB()}}
+{\footnotesize\ttfamily void Game\+::\+Update\+Main\+Pass\+CB (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a4b7fd5dda779a7dd834dd7d26566b657}\label{class_game_a4b7fd5dda779a7dd834dd7d26566b657}} 
+\index{Game@{Game}!UpdateMaterialCBs@{UpdateMaterialCBs}}
+\index{UpdateMaterialCBs@{UpdateMaterialCBs}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UpdateMaterialCBs()}{UpdateMaterialCBs()}}
+{\footnotesize\ttfamily void Game\+::\+Update\+Material\+CBs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00296}{296}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_a1bdfe76a8bfdff007837cb2d2c3c59d6}\label{class_game_a1bdfe76a8bfdff007837cb2d2c3c59d6}} 
+\index{Game@{Game}!UpdateObjectCBs@{UpdateObjectCBs}}
+\index{UpdateObjectCBs@{UpdateObjectCBs}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UpdateObjectCBs()}{UpdateObjectCBs()}}
+{\footnotesize\ttfamily void Game\+::\+Update\+Object\+CBs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_timer}{Game\+Timer}} \&}]{gt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00272}{272}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_aa8184a727f9071c3db7e5efa3a6dce49}\label{class_game_aa8184a727f9071c3db7e5efa3a6dce49}} 
+\index{Game@{Game}!mAllRitems@{mAllRitems}}
+\index{mAllRitems@{mAllRitems}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mAllRitems}{mAllRitems}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_render_item}{Render\+Item}}$>$ $>$ Game\+::m\+All\+Ritems}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a042dbbcf404fad865bdf72e534c675d5}\label{class_game_a042dbbcf404fad865bdf72e534c675d5}} 
+\index{Game@{Game}!mCamera@{mCamera}}
+\index{mCamera@{mCamera}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mCamera}{mCamera}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_camera}{Camera}} Game\+::m\+Camera}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_ad7a064571877d4b8becd1f53c98cafa9}\label{class_game_ad7a064571877d4b8becd1f53c98cafa9}} 
+\index{Game@{Game}!mCbvSrvDescriptorSize@{mCbvSrvDescriptorSize}}
+\index{mCbvSrvDescriptorSize@{mCbvSrvDescriptorSize}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mCbvSrvDescriptorSize}{mCbvSrvDescriptorSize}}
+{\footnotesize\ttfamily UINT Game\+::m\+Cbv\+Srv\+Descriptor\+Size = 0}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a6119ac12b9dafae4e105ac9b4e80c1b2}\label{class_game_a6119ac12b9dafae4e105ac9b4e80c1b2}} 
+\index{Game@{Game}!mCurrFrameResource@{mCurrFrameResource}}
+\index{mCurrFrameResource@{mCurrFrameResource}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mCurrFrameResource}{mCurrFrameResource}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}}$\ast$ Game\+::m\+Curr\+Frame\+Resource = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a1f687875ba94b87162a7dc90b80b0092}\label{class_game_a1f687875ba94b87162a7dc90b80b0092}} 
+\index{Game@{Game}!mCurrFrameResourceIndex@{mCurrFrameResourceIndex}}
+\index{mCurrFrameResourceIndex@{mCurrFrameResourceIndex}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mCurrFrameResourceIndex}{mCurrFrameResourceIndex}}
+{\footnotesize\ttfamily int Game\+::m\+Curr\+Frame\+Resource\+Index = 0}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a2a9401ba48c48468ceef6771309ddff7}\label{class_game_a2a9401ba48c48468ceef6771309ddff7}} 
+\index{Game@{Game}!mFrameResources@{mFrameResources}}
+\index{mFrameResources@{mFrameResources}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mFrameResources}{mFrameResources}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}}$>$ $>$ Game\+::m\+Frame\+Resources}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a0e53612a0a54bdd46ea1d8b071260b77}\label{class_game_a0e53612a0a54bdd46ea1d8b071260b77}} 
+\index{Game@{Game}!mGeometries@{mGeometries}}
+\index{mGeometries@{mGeometries}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mGeometries}{mGeometries}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_mesh_geometry}{Mesh\+Geometry}}$>$ $>$ Game\+::m\+Geometries}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a4f5868aab9c96810369a9ab91dec1d2b}\label{class_game_a4f5868aab9c96810369a9ab91dec1d2b}} 
+\index{Game@{Game}!mInputLayout@{mInputLayout}}
+\index{mInputLayout@{mInputLayout}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mInputLayout}{mInputLayout}}
+{\footnotesize\ttfamily std\+::vector$<$D3\+D12\+\_\+\+INPUT\+\_\+\+ELEMENT\+\_\+\+DESC$>$ Game\+::m\+Input\+Layout}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_ab5cce9551fdd8b346b36747d6f4d3a38}\label{class_game_ab5cce9551fdd8b346b36747d6f4d3a38}} 
+\index{Game@{Game}!mLastMousePos@{mLastMousePos}}
+\index{mLastMousePos@{mLastMousePos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mLastMousePos}{mLastMousePos}}
+{\footnotesize\ttfamily POINT Game\+::m\+Last\+Mouse\+Pos}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00081}{81}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_ad2759008a4629646703b6e34e0501f6c}\label{class_game_ad2759008a4629646703b6e34e0501f6c}} 
+\index{Game@{Game}!mMainPassCB@{mMainPassCB}}
+\index{mMainPassCB@{mMainPassCB}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mMainPassCB}{mMainPassCB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pass_constants}{Pass\+Constants}} Game\+::m\+Main\+Pass\+CB}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a871400f233e46cc637f383106e89dd71}\label{class_game_a871400f233e46cc637f383106e89dd71}} 
+\index{Game@{Game}!mMaterials@{mMaterials}}
+\index{mMaterials@{mMaterials}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mMaterials}{mMaterials}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_material}{Material}}$>$ $>$ Game\+::m\+Materials}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_acb640d01b04bbb82f3f2b02ac09554b2}\label{class_game_acb640d01b04bbb82f3f2b02ac09554b2}} 
+\index{Game@{Game}!mOpaquePSO@{mOpaquePSO}}
+\index{mOpaquePSO@{mOpaquePSO}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mOpaquePSO}{mOpaquePSO}}
+{\footnotesize\ttfamily Com\+Ptr$<$ID3\+D12\+Pipeline\+State$>$ Game\+::m\+Opaque\+PSO = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a626d5d97ee0e536b99703094828f5f79}\label{class_game_a626d5d97ee0e536b99703094828f5f79}} 
+\index{Game@{Game}!mOpaqueRitems@{mOpaqueRitems}}
+\index{mOpaqueRitems@{mOpaqueRitems}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mOpaqueRitems}{mOpaqueRitems}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_render_item}{Render\+Item}}$\ast$$>$ Game\+::m\+Opaque\+Ritems}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a987fac1aded1b4f4b9495eb0f1464c12}\label{class_game_a987fac1aded1b4f4b9495eb0f1464c12}} 
+\index{Game@{Game}!mRootSignature@{mRootSignature}}
+\index{mRootSignature@{mRootSignature}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mRootSignature}{mRootSignature}}
+{\footnotesize\ttfamily Com\+Ptr$<$ID3\+D12\+Root\+Signature$>$ Game\+::m\+Root\+Signature = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a5d821a872c24ff21b97300d24e37ac23}\label{class_game_a5d821a872c24ff21b97300d24e37ac23}} 
+\index{Game@{Game}!mShaders@{mShaders}}
+\index{mShaders@{mShaders}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mShaders}{mShaders}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, Com\+Ptr$<$ID3\+DBlob$>$ $>$ Game\+::m\+Shaders}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00059}{59}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a85befdbe03bbcdd30ad94cd64e0a1bd1}\label{class_game_a85befdbe03bbcdd30ad94cd64e0a1bd1}} 
+\index{Game@{Game}!mSrvDescriptorHeap@{mSrvDescriptorHeap}}
+\index{mSrvDescriptorHeap@{mSrvDescriptorHeap}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mSrvDescriptorHeap}{mSrvDescriptorHeap}}
+{\footnotesize\ttfamily Com\+Ptr$<$ID3\+D12\+Descriptor\+Heap$>$ Game\+::m\+Srv\+Descriptor\+Heap = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_a914940e399d2418018640ef3da130371}\label{class_game_a914940e399d2418018640ef3da130371}} 
+\index{Game@{Game}!mTextures@{mTextures}}
+\index{mTextures@{mTextures}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mTextures}{mTextures}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_texture}{Texture}}$>$ $>$ Game\+::m\+Textures}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+\mbox{\Hypertarget{class_game_adbc6dc1be92656b79625575a5d84e110}\label{class_game_adbc6dc1be92656b79625575a5d84e110}} 
+\index{Game@{Game}!mWorld@{mWorld}}
+\index{mWorld@{mWorld}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mWorld}{mWorld}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_world}{World}} Game\+::m\+World}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8hpp_source_l00083}{83}} of file \mbox{\hyperlink{_game_8hpp_source}{Game.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Direct\+X12\+Engine/\+Direct\+X12\+Engine/\mbox{\hyperlink{_game_8hpp}{Game.\+hpp}}\item 
+Direct\+X12\+Engine/\+Direct\+X12\+Engine/\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

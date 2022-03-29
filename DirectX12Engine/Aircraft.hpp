@@ -16,7 +16,7 @@ public:
 
 private:
 	virtual void	drawCurrent() const;
-	//virtual void	buildCurrent();
+	virtual void	buildCurrent();
 
 private:
 	Type	m_Type;

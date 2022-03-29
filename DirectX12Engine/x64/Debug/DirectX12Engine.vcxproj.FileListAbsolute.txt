@@ -1,2 +1,4 @@
 C:\School\Semester 9\Game Engine Development 2\Assignments\DirectX12Engine\x64\Debug\DirectX12Engine.exe
 D:\T163\Semester 9\GameEngineDevelopment2\DirectX12Engine\DirectX12Engine\DirectX12Engine\x64\Debug\DirectX12Engine.exe
+D:\T163\Semester 9\DirectX12Engine\DirectX12Engine\DirectX12Engine\x64\Debug\DirectX12Engine.exe
+D:\T163\Semester 9\DirectX12Engine\DirectX12Engine\DirectX12Engine\x64\Debug\DirectX12Engine.pdb
